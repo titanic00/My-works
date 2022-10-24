@@ -1,0 +1,44 @@
+//====================================================================================================
+
+.footer {
+
+    // .footer__container
+
+    &__container {}
+
+    // .footer__inner
+
+    &__inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: rem(50);
+    }
+
+    // .footer__icons
+
+    &__icons {
+        display: flex;
+        @include adaptiveValue("gap", 30, 15);
+        transform: scale(2);
+
+        @media (max-width:$mobileSmall) {
+            transform: scale(1.5);
+        }
+    }
+
+    // .footer__icon
+
+    &__icon {
+        transition: all 0.3s ease 0s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                transform: scale(1.5);
+            }
+        }
+    }
+}
+
+
+//====================================================================================================
