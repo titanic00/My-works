@@ -1,0 +1,330 @@
+@charset "UTF-8";
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: 320px;
+}
+
+body {
+  color: #000;
+  line-height: 1;
+  font-family: "";
+  font-size: 0.875rem;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+button,
+textarea {
+  font-family: "";
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  background-color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+.lock body {
+  overflow: hidden;
+  touch-action: none;
+}
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.wrapper > main {
+  flex: 1 1 auto;
+}
+.wrapper > * {
+  min-width: 0;
+}
+
+/*
+(i) Стили будут применяться ко 
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+Снипет (HTML): cnt
+*/
+[class*=__container] {
+  max-width: 100rem;
+  box-sizing: content-box;
+  margin: 0 auto;
+  padding: 0 0.9375rem;
+}
+
+[class*=-ibg] {
+  position: relative;
+}
+[class*=-ibg] img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+[class*=-ibg_contain] img {
+  object-fit: contain;
+}
+
+@supports (padding-top: clamp( 3.125rem , 0.8349236641rem  +  11.4503816794vw , 12.5rem )) {
+  .page__projects-slider {
+    padding-top: clamp( 3.125rem , 0.8349236641rem  +  11.4503816794vw , 12.5rem );
+  }
+}
+@supports not (padding-top: clamp( 3.125rem , 0.8349236641rem  +  11.4503816794vw , 12.5rem )) {
+  .page__projects-slider {
+    padding-top: calc(3.125rem + 9.375 * (100vw - 20rem) / 81.875);
+  }
+}
+@supports (padding-bottom: clamp( 1.25rem , 0.7919847328rem  +  2.2900763359vw , 3.125rem )) {
+  .page__projects-slider {
+    padding-bottom: clamp( 1.25rem , 0.7919847328rem  +  2.2900763359vw , 3.125rem );
+  }
+}
+@supports not (padding-bottom: clamp( 1.25rem , 0.7919847328rem  +  2.2900763359vw , 3.125rem )) {
+  .page__projects-slider {
+    padding-bottom: calc(1.25rem + 1.875 * (100vw - 20rem) / 81.875);
+  }
+}
+
+.dots {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.dots .swiper-pagination-bullet {
+  margin: 0px 0.46875rem;
+  cursor: pointer;
+  height: 0.625rem;
+  width: 0.625rem;
+  transition: all 0.3s ease 0s;
+  background-color: black;
+  border-radius: 50%;
+  position: relative;
+}
+.dots .swiper-pagination-bullet-active {
+  background-color: orange;
+}
+
+/*
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		cursor: pointer;
+		z-index: 5;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: #000;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+*/
+.footer__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3.125rem;
+}
+.footer__icons {
+  display: flex;
+  transform: scale(2);
+}
+@supports (gap: clamp( 0.9375rem , 0.7084923664rem  +  1.1450381679vw , 1.875rem )) {
+  .footer__icons {
+    gap: clamp( 0.9375rem , 0.7084923664rem  +  1.1450381679vw , 1.875rem );
+  }
+}
+@supports not (gap: clamp( 0.9375rem , 0.7084923664rem  +  1.1450381679vw , 1.875rem )) {
+  .footer__icons {
+    gap: calc(0.9375rem + 0.9375 * (100vw - 20rem) / 81.875);
+  }
+}
+@media (max-width: 29.99875em) {
+  .footer__icons {
+    transform: scale(1.5);
+  }
+}
+.footer__icon {
+  transition: all 0.3s ease 0s;
+}
+@media (any-hover: hover) {
+  .footer__icon:hover {
+    transform: scale(1.5);
+  }
+}
+
+.slider-projects__slider {
+  margin: -1.875rem -0.9375rem;
+  padding: 1.875rem 0.9375rem;
+}
+.slider-projects__wrapper:not(:last-child) {
+  margin-bottom: 3.125rem;
+}
+.slider-projects__slide {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease 0s;
+  height: auto;
+}
+@media (any-hover: hover) {
+  .slider-projects__slide:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.slide-projects {
+  border-radius: 0.625rem;
+}
+.slide-projects__image-ibg {
+  padding-bottom: 41.6666666667%;
+}
+.slide-projects__image-ibg img {
+  border-top-left-radius: 0.625rem;
+  border-top-right-radius: 0.625rem;
+}
+
+@supports (padding: clamp( 0.625rem , 0.3196564885rem  +  1.5267175573vw , 1.875rem )) {
+  .body-slide-projects {
+    padding: clamp( 0.625rem , 0.3196564885rem  +  1.5267175573vw , 1.875rem );
+  }
+}
+@supports not (padding: clamp( 0.625rem , 0.3196564885rem  +  1.5267175573vw , 1.875rem )) {
+  .body-slide-projects {
+    padding: calc(0.625rem + 1.25 * (100vw - 20rem) / 81.875);
+  }
+}
+.body-slide-projects__title {
+  font-weight: 600;
+}
+@supports (font-size: clamp( 1.375rem , 1.2528625954rem  +  0.6106870229vw , 1.875rem )) {
+  .body-slide-projects__title {
+    font-size: clamp( 1.375rem , 1.2528625954rem  +  0.6106870229vw , 1.875rem );
+  }
+}
+@supports not (font-size: clamp( 1.375rem , 1.2528625954rem  +  0.6106870229vw , 1.875rem )) {
+  .body-slide-projects__title {
+    font-size: calc(1.375rem + 0.5 * (100vw - 20rem) / 81.875);
+  }
+}
+.swiper {
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  width: 100%;
+  height: 100%;
+  box-sizing: content-box;
+  display: flex;
+  position: relative;
+}
+
+.swiper-vertical .swiper-wrapper {
+  flex-direction: column;
+}
+
+.swiper-autoheight .swiper-wrapper {
+  align-items: flex-start;
+}
+
+.swiper-initialized .swiper-slide {
+  flex-shrink: 0;
+}
+
+.swiper-android .swiper-slide,
+.swiper-android .swiper-wrapper {
+  transform: translate3d(0px, 0, 0);
+}
+
+.swiper-button-lock {
+  display: none !important;
+}
